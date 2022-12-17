@@ -52,3 +52,17 @@ C:\Users\SIGMA\Desktop\[TEMPLATE] ImageFilters\ImageFilters\obj\Release\ImageFil
 C:\Users\SIGMA\Desktop\[TEMPLATE] ImageFilters\ImageFilters\obj\Release\ImageFilters.csproj.CopyComplete
 C:\Users\SIGMA\Desktop\[TEMPLATE] ImageFilters\ImageFilters\obj\Release\ImageFilters.exe
 C:\Users\SIGMA\Desktop\[TEMPLATE] ImageFilters\ImageFilters\obj\Release\ImageFilters.pdb
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Release\ImageFilters.csproj.AssemblyReference.cache
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Release\ImageFilters.Form1.resources
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Release\ImageFilters.Properties.Resources.resources
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Release\ImageFilters.csproj.GenerateResource.cache
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Release\ImageFilters.csproj.CoreCompileInputs.cache
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Release\ImageFilters.exe
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Release\ImageFilters.pdb
+E:\Test\Image-Filtering-Algorithm\ImageFilters\bin\Release\ImageFilters.exe.config
+E:\Test\Image-Filtering-Algorithm\ImageFilters\bin\Release\ImageFilters.exe
+E:\Test\Image-Filtering-Algorithm\ImageFilters\bin\Release\ImageFilters.pdb
+E:\Test\Image-Filtering-Algorithm\ImageFilters\bin\Release\ZedGraph.dll
+E:\Test\Image-Filtering-Algorithm\ImageFilters\bin\Release\ZGraphTools.dll
+E:\Test\Image-Filtering-Algorithm\ImageFilters\bin\Release\ZGraphTools.pdb
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Release\ImageFilters.csproj.CopyComplete
