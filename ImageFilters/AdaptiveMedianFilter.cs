@@ -19,6 +19,7 @@ namespace ImageFilters
             // Remove the next line
 
             int x;
+            int y;
             throw new NotImplementedException();
         }
     }
