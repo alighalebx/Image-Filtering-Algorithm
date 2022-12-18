@@ -15,7 +15,8 @@ namespace ImageFilters
             // 1) Chose a non-noise median value (true median)
             // 2) Replace the center with the median value if not noise, or leave it and move to the next pixel
             // 3) Repeat the process for the next pixel starting from step 0 again
-          
+          //7aga
+            // Remove the next line
             //a7a
             int x;
             throw new NotImplementedException();
