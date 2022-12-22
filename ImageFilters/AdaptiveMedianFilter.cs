@@ -83,7 +83,7 @@ namespace ImageFilters
             int height = ImageMatrix.GetLength(1);
             
             Byte[,] newImage = new Byte[width, height];
-
+            //v
             
                 for (int x = 0; x < width; x++)
                 {
