@@ -17,7 +17,7 @@ namespace ImageFilters
         }
 
         byte[,] ImageMatrix;
-        int Wmax = 1;
+        int Wmax = 3;
         int T = 1;
         int SelectedFilterID = 0;
         int UsedAlgorithm = 0;
@@ -107,6 +107,7 @@ namespace ImageFilters
 
         private void maxWindowSize_ValueChanged(object sender, EventArgs e)
         {
+
             Wmax = (int)maxWindowSize.Value;
         }
 

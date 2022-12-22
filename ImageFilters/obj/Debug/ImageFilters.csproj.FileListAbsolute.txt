@@ -21,3 +21,17 @@ C:\Users\SIGMA\Desktop\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilte
 C:\Users\SIGMA\Desktop\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.csproj.CopyComplete
 C:\Users\SIGMA\Desktop\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.exe
 C:\Users\SIGMA\Desktop\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.pdb
+E:\Test\Image-Filtering-Algorithm\ImageFilters\bin\Debug\ImageFilters.exe.config
+E:\Test\Image-Filtering-Algorithm\ImageFilters\bin\Debug\ImageFilters.exe
+E:\Test\Image-Filtering-Algorithm\ImageFilters\bin\Debug\ImageFilters.pdb
+E:\Test\Image-Filtering-Algorithm\ImageFilters\bin\Debug\ZedGraph.dll
+E:\Test\Image-Filtering-Algorithm\ImageFilters\bin\Debug\ZGraphTools.dll
+E:\Test\Image-Filtering-Algorithm\ImageFilters\bin\Debug\ZGraphTools.pdb
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Debug\ImageFilters.csproj.AssemblyReference.cache
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Debug\ImageFilters.Form1.resources
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Debug\ImageFilters.Properties.Resources.resources
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Debug\ImageFilters.csproj.GenerateResource.cache
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Debug\ImageFilters.csproj.CoreCompileInputs.cache
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Debug\ImageFilters.csproj.CopyComplete
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Debug\ImageFilters.exe
+E:\Test\Image-Filtering-Algorithm\ImageFilters\obj\Debug\ImageFilters.pdb

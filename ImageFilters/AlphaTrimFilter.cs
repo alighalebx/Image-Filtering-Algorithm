@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static ImageFilters.SortHelper;
+
+
 
 namespace ImageFilters
 {
@@ -8,16 +11,66 @@ namespace ImageFilters
     {
         public static Byte[,] ApplyFilter(Byte[,] ImageMatrix, int MaxWindowSize, int UsedAlgorithm, int TrimValue)
         {
-            //TODO: Implement alpha trim filter
-            // For each pixel in the image:
-            // 1) Store the values of the neighboring pixels in an array. The array is called the window, and it should be odd sized.
-            // 2) Sort the values in the window in ascending order (Quick Sort or Counting Sort)
-            // 3) Exclude the first T values (smallest) and the last T values (largest) from the array.
-            // 4) Calculate the average of the remaining values as the new pixel value 
-            // 5) Place the new value in the center of the window in the new matrix
+            int width = ImageMatrix.GetLength(0);
+            int height = ImageMatrix.GetLength(1);
 
-            // Remove the next line
-            throw new NotImplementedException();
+
+            int windowSize = Math.Min(MaxWindowSize, height);
+
+
+            int trimming = TrimValue;
+
+
+            Byte[,] newImage = new Byte[width, height];
+
+            
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+
+                    Byte[] window = new Byte[windowSize * windowSize];
+                    int index = 0;
+                    for (int i = x - windowSize / 2; i <= x + windowSize / 2; i++)
+                    {
+                        for (int j = y - windowSize / 2; j <= y + windowSize / 2; j++)
+                        {
+                            if (i >= 0 && j >= 0 && i < width && j < height)
+                            {
+                                window[index] = ImageMatrix[i, j];
+                            }
+                            index++;
+                        }
+                    }
+
+
+                    if (UsedAlgorithm == 0)
+                    {
+                        CountingSort(window);
+                    }
+                    else
+                    {
+                        Kth_element(window);
+                    }
+
+
+
+                    int[] trimmedWindow = new int[windowSize * windowSize - trimming * 2];
+                    Array.Copy(window, trimming, trimmedWindow, 0, windowSize * windowSize - trimming * 2);
+                    int newPixelValue = 0;
+
+                    for (int i = 0; i < trimmedWindow.Length; i++)
+                    {
+                        newPixelValue += trimmedWindow[i];
+                    }
+                    newPixelValue = newPixelValue / trimmedWindow.Length;
+
+
+
+                    newImage[x, y] = (Byte)newPixelValue;
+                }
+            }
+            return newImage;
         }
     }
 }
