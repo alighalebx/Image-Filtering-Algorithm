@@ -81,25 +81,25 @@ namespace ImageFilters
             //throw new NotImplementedException();
             int width = ImageMatrix.GetLength(0);
             int height = ImageMatrix.GetLength(1);
-            
+
             Byte[,] newImage = new Byte[width, height];
             //v
-            
-                for (int x = 0; x < width; x++)
+
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
                 {
-                    for (int y = 0; y < height; y++)
-                    {
                     //if (newImage[x, y] == 0 || newImage[x, y] == 255)
                     //{
                     //    continue;
                     //}
                     int windowsize = 3;
 
-                        int newpixel=-1;
-                            while (windowsize <= MaxWindowSize)
-                            {
+                    int newpixel = -1;
+                    while (windowsize <= MaxWindowSize)
+                    {
 
-                                Byte[] window = new Byte[windowsize * windowsize];
+                        Byte[] window = new Byte[windowsize * windowsize];
                         int index = 0;
                         for (int i = x - windowsize / 2; i <= x + windowsize / 2; i++)
                         {
@@ -119,7 +119,8 @@ namespace ImageFilters
                         int midBeforeSort = window[mid];
                         if (UsedAlgorithm == 0)
                         {
-                            Array.Sort(window);
+
+                            QuickSort(window);
                         }
                         else
                         {
@@ -129,7 +130,7 @@ namespace ImageFilters
                         int zmed = window[mid];
                         int zmin = window[0];
                         newpixel = zmed;
-                        
+
                         int zmax = window[size - 1];
                         int a1 = zmed - zmin;
                         int a2 = zmax - zmed;
@@ -150,15 +151,16 @@ namespace ImageFilters
 
                         // windowsize = windowsize + 2;
                         windowsize += 2;
-                            
-                            
-                        
-
-                     
 
 
 
-                    } Debug.Assert(newpixel >= 0);
+
+
+
+
+
+                    }
+                    Debug.Assert(newpixel >= 0);
 
                     newImage[x, y] = (Byte)newpixel;
 

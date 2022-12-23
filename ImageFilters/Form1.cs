@@ -107,7 +107,6 @@ namespace ImageFilters
 
         private void maxWindowSize_ValueChanged(object sender, EventArgs e)
         {
-
             Wmax = (int)maxWindowSize.Value;
         }
 

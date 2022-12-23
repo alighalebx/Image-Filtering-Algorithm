@@ -1,8 +1,7 @@
 ﻿using System;
+using static ImageFilters.SortHelper;
 using System.Collections.Generic;
 using System.Text;
-using static ImageFilters.SortHelper;
-
 
 
 namespace ImageFilters
@@ -11,19 +10,14 @@ namespace ImageFilters
     {
         public static Byte[,] ApplyFilter(Byte[,] ImageMatrix, int MaxWindowSize, int UsedAlgorithm, int TrimValue)
         {
+
             int width = ImageMatrix.GetLength(0);
             int height = ImageMatrix.GetLength(1);
-
-
-            int windowSize = Math.Min(MaxWindowSize, height);
-
-
             int trimming = TrimValue;
-
-
+            int newPixelValue = 0;
+            int windowSize = Math.Min(MaxWindowSize, Math.Min(height, width));
             Byte[,] newImage = new Byte[width, height];
 
-            
             for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y++)
@@ -35,7 +29,8 @@ namespace ImageFilters
                     {
                         for (int j = y - windowSize / 2; j <= y + windowSize / 2; j++)
                         {
-                            if (i >= 0 && j >= 0 && i < width && j < height)
+
+                            if (valid(i, j, width, height))
                             {
                                 window[index] = ImageMatrix[i, j];
                             }
@@ -43,34 +38,38 @@ namespace ImageFilters
                         }
                     }
 
-
                     if (UsedAlgorithm == 0)
                     {
                         CountingSort(window);
                     }
                     else
                     {
-                        Kth_element(window);
+                         Kth_element(window , trimming);
                     }
 
-
-
-                    int[] trimmedWindow = new int[windowSize * windowSize - trimming * 2];
-                    Array.Copy(window, trimming, trimmedWindow, 0, windowSize * windowSize - trimming * 2);
-                    int newPixelValue = 0;
-
-                    for (int i = 0; i < trimmedWindow.Length; i++)
+                    for (int i = trimming; i < index - trimming; i++)
                     {
-                        newPixelValue += trimmedWindow[i];
+                        newPixelValue += window[i];
                     }
-                    newPixelValue = newPixelValue / trimmedWindow.Length;
 
-
+                    newPixelValue = newPixelValue / (index - trimming * 2);
 
                     newImage[x, y] = (Byte)newPixelValue;
                 }
             }
             return newImage;
+        }
+
+        static bool valid(int i, int j, int width, int height)
+        {
+            if (i >= 0 && j >= 0 && i < width && j < height)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

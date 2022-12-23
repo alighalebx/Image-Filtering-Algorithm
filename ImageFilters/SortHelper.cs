@@ -2,35 +2,122 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
-
 namespace ImageFilters
 {
     class SortHelper
     {
 
-        public static byte Kth_element(Byte[] Array)
+        public static byte Kth_element(Byte[] Array , int K)
         {
-            //TODO: Implement Kth smallest/largest element
-            // 1) Search the input array for the MIN and MAX elements without sorting
-            // 2) Get the avarage of the numbers excluding the MIN and MAX elements
 
-            // Remove the next line
-            throw new NotImplementedException();
+
+            //int pivot(int[] arr, int l, int r)
+            //{
+            //    Random random = new Random();
+
+            //    int range = (r - l) + 1;
+            //    int pivotIndex = l + (random.Next() % range);
+            //    int pivotElement = arr[pivotIndex];
+
+            //    while (l < r)
+            //    {
+            //        while (arr[l] < pivotElement)
+            //            l++;
+
+            //        while (arr[r] > pivotElement)
+            //            r--;
+
+            //        if (arr[l] == arr[r])
+            //            l++;
+            //        else if (l < r)
+            //        {
+            //            int tmp = arr[l];
+            //            arr[l] = arr[r];
+            //            arr[r] = tmp;
+            //        }
+
+            //    }
+            //    return r;
+
+            //}
+
+            //int quickSelect(int[] arr, int l, int r, int k)
+            //{
+
+            //    if (l == r)
+            //        return arr[l];
+
+            //    int pivotIndex = pivot(arr, l, r);
+            //    int length = (pivotIndex - l + 1);
+
+            //    if (length == k)
+            //        return arr[pivotIndex];
+            //    else if (k < length)
+            //        return quickSelect(arr, l, (pivotIndex - 1), k);
+            //    else
+            //        return quickSelect(arr, (pivotIndex + 1), r, (k - length));
+            //}
+
+          
+
+
+
+
+            int T = K - 1;
+            for (int i = 0; i < T; i++)
+            {
+                int minIndex = i;
+                for (int j = i + 1; j < Array.Length; j++)
+                {
+                    if (Array[j] < Array[minIndex])
+                    {
+                        minIndex = j;
+                    }
+                }
+                Byte temp = Array[i];
+                Array[i] = Array[minIndex];
+                Array[minIndex] = temp;
+            }
+
+            int N = Array.Length - 1;
+            for (int i = N; i > N - T; i--)
+            {
+                int maxIndex = i;
+                for (int j = i - 1; j >= 0; j--)
+                {
+                    if (Array[j] > Array[maxIndex])
+                    {
+                        maxIndex = j;
+                    }
+                }
+                Byte temp = Array[i];
+                Array[i] = Array[maxIndex];
+                Array[maxIndex] = temp;
+            }
+
+            int sum = 0;
+            for (int i = T; i <= N - T; i++)
+            {
+                sum += Array[i];
+            }
+            byte average = (byte)(sum / (N - 2 * T));
+            return average;
         }
 
-        public static Byte[] CountingSort(Byte[] Array)    
+
+        public static byte[] CountingSort(Byte[] Array)
         {
-        //TODO: Implement the Counting Sort alogrithm on the input array
+            //TODO: Implement the Counting Sort alogrithm on the input array
 
 
 
-        var maxVal = Array[0];
+            var maxVal = Array[0];
             for (int i = 1; i < Array.Length; i++)
                 if (Array[i] > maxVal)
                     maxVal = Array[i];
 
             //not required in this type of code
-        var minVal = Array[0];
+            var minVal = Array[0];
             for (int i = 1; i < Array.Length; i++)
                 if (Array[i] < minVal)
                     minVal = Array[i];
@@ -79,10 +166,10 @@ namespace ImageFilters
         static int partition(Byte[] arr, int low, int high)
         {
 
-            
+
 
             int pivot = arr[high];
-            
+
             int i = (low - 1);
 
 
@@ -106,7 +193,7 @@ namespace ImageFilters
         static byte[] quickSort(Byte[] arr, int low, int high)
         {
 
-           
+
             if (low < high)
             {
                 int pi = partition(arr, low, high);
